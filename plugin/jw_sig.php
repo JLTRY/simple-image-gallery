@@ -126,6 +126,7 @@ class plgContentJw_sig extends JPlugin
 
         // Check for basic requirements
         if (!extension_loaded('gd') && !function_exists('gd_info')) {
+ 
             if (version_compare(JVERSION, '4', 'ge')) {
                 $app->enqueueMessage(JText::_('JW_PLG_SIG_NOTICE_01'), 'notice');
             } else {
@@ -134,6 +135,7 @@ class plgContentJw_sig extends JPlugin
             return;
         }
         if (!is_writable($sitePath.'/cache')) {
+
             if (version_compare(JVERSION, '4', 'ge')) {
                 $app->enqueueMessage(JText::_('JW_PLG_SIG_NOTICE_02'), 'notice');
             } else {
@@ -149,6 +151,7 @@ class plgContentJw_sig extends JPlugin
 
         // Check if Simple Image Gallery Free (old) is present and show a warning
         if (JPluginHelper::isEnabled('content', 'jw_simpleImageGallery') == true) {
+ 
             if (version_compare(JVERSION, '4', 'ge')) {
                 $app->enqueueMessage(JText::_('JW_PLG_SIG_NOTICE_OLD_SIG'), 'notice');
             } else {
